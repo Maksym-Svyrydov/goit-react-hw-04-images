@@ -16,7 +16,7 @@ export const App = () => {
   const [images, setImages] = useState([]);
   const [modalImage, setModalImage] = useState();
   const [showModal, setShowModal] = useState(false);
-  const [totalHits, setTotalHits] = useState();
+  const [totalHits, setTotalHits] = useState(0);
   useEffect(() => {
     if (!query) {
       return;
