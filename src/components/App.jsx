@@ -62,7 +62,9 @@ export const App = () => {
       <SearchBar onSubmit={handleFormSubmit} />
       {isLoading && <Loader />}
       <ImageGallery images={images} openModal={toggleModal} />
-      {!!totalHits && <LoadMore onLoadMore={handleLoadMore} />}
+      {!!totalHits && images.length >= 12 && (
+        <LoadMore onLoadMore={handleLoadMore} />
+      )}
       {showModal && <Modal closeModal={toggleModal} modalImage={modalImage} />}
 
       <ToastContainer autoClose={3500} />

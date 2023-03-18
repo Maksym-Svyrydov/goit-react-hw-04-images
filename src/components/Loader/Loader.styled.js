@@ -1,5 +1,12 @@
 import styled from 'styled-components';
 export const LoaderWrapper = styled.div`
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  ${'' /* margin-top: 80px; */}
+  ${
+    '' /* margin-left: auto;
+  margin-right: auto; */
+  }
+  position: absolute;
+  justify-content: center;
+  align-items: center;
 `;
