@@ -24,11 +24,13 @@ export const App = () => {
     setIsloading(true);
     fetchGallery(query, page)
       .then(data => {
-        setImages(prevState =>
-          page === 1 ? [...data.hits] : [...prevState, ...data.hits]
+        setImages(prevImages =>
+          page === 1 ? [...data.hits] : [...prevImages, ...data.hits]
         );
-        setTotalHits(prevState =>
-          page === 1 ? prevState - data.hits.length : [...data.hits].length
+        setTotalHits(prevPages =>
+          page === 1
+            ? prevPages - data.hits.length
+            : prevPages - [...data.hits].length
         );
       })
       .finally(() => {
@@ -63,7 +65,7 @@ export const App = () => {
       {!!totalHits && <LoadMore onLoadMore={handleLoadMore} />}
       {showModal && <Modal closeModal={toggleModal} modalImage={modalImage} />}
 
-      <ToastContainer autoClose={4500} />
+      <ToastContainer autoClose={3500} />
     </Conatiner>
   );
 };
