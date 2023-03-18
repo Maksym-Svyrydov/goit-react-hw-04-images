@@ -21,10 +21,11 @@ export const SearchBar = ({ onSubmit }) => {
     //  console.log({ earch: e.currentTarget.value });
   };
   const handleSubmit = e => {
+    e.preventDefault();
     if (query.trim() === '') {
       return toast.error('Введите слово для поиска');
     }
-    e.preventDefault();
+
     onSubmit(query);
     setQuery('');
   };

@@ -63,7 +63,7 @@ export const App = () => {
       {!!totalHits && <LoadMore onLoadMore={handleLoadMore} />}
       {showModal && <Modal closeModal={toggleModal} modalImage={modalImage} />}
 
-      <ToastContainer autoClose={2500} />
+      <ToastContainer autoClose={4500} />
     </Conatiner>
   );
 };
