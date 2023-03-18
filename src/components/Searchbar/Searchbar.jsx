@@ -26,6 +26,7 @@ export const SearchBar = ({ onSubmit }) => {
     }
     e.preventDefault();
     onSubmit(query);
+    setQuery('');
   };
 
   // const { handleSubmit, handleInputChange } = this;
